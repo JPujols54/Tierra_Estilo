@@ -1,6 +1,18 @@
 package vista;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import logica.DBConnection;
+import vista.frmHome;
+import logica.ClienteUI;
 
 public class frmLogin extends javax.swing.JFrame {
 
@@ -9,6 +21,8 @@ public class frmLogin extends javax.swing.JFrame {
 
     public frmLogin() {
         initComponents();
+        
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabel2, "src/imagenes/Identik_negro.png");
     }
 
     @SuppressWarnings("unchecked")
@@ -17,6 +31,7 @@ public class frmLogin extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         Fondo2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         btnExit = new javax.swing.JPanel();
         txtExit = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
@@ -28,7 +43,7 @@ public class frmLogin extends javax.swing.JFrame {
         txtPass = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
         btnIngresar = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        jIngresar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -38,15 +53,24 @@ public class frmLogin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Fondo2.setBackground(new java.awt.Color(0, 0, 0));
+
+        jLabel2.setText("jLabel2");
+
         javax.swing.GroupLayout Fondo2Layout = new javax.swing.GroupLayout(Fondo2);
         Fondo2.setLayout(Fondo2Layout);
         Fondo2Layout.setHorizontalGroup(
             Fondo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(Fondo2Layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+                .addContainerGap())
         );
         Fondo2Layout.setVerticalGroup(
             Fondo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Fondo2Layout.createSequentialGroup()
+                .addContainerGap(121, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(113, 113, 113))
         );
 
         jPanel1.add(Fondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 300, 500));
@@ -118,7 +142,7 @@ public class frmLogin extends javax.swing.JFrame {
 
         txtUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(153, 153, 153));
-        txtUsuario.setText("Ingrese su nombre de usuario");
+        txtUsuario.setText("Ingrese su correo electrónico");
         txtUsuario.setBorder(null);
         txtUsuario.setCaretColor(new java.awt.Color(153, 153, 153));
         txtUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -156,9 +180,14 @@ public class frmLogin extends javax.swing.JFrame {
 
         btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Ingresar");
+        jIngresar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jIngresar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jIngresar.setText("Ingresar");
+        jIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jIngresarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnIngresarLayout = new javax.swing.GroupLayout(btnIngresar);
         btnIngresar.setLayout(btnIngresarLayout);
@@ -166,14 +195,14 @@ public class frmLogin extends javax.swing.JFrame {
             btnIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnIngresarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                .addComponent(jIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                 .addContainerGap())
         );
         btnIngresarLayout.setVerticalGroup(
             btnIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnIngresarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addComponent(jIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -192,6 +221,7 @@ public class frmLogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
 
     private void txtPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassActionPerformed
 
@@ -224,7 +254,7 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtExitMouseExited
 
     private void txtUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsuarioMousePressed
-        if (txtUsuario.getText().equals("Ingrese su nombre de usuario")) {
+        if (txtUsuario.getText().equals("Ingrese su correo electrónico")) {
             txtUsuario.setText("");
             txtUsuario.setForeground(Color.black);
         }
@@ -235,41 +265,72 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioMousePressed
 
     private void txtPassMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPassMousePressed
-        if(String.valueOf(txtPass.getPassword()).equals("**********") ){
-        txtPass.setText("");
-        txtPass.setForeground(Color.black);
+        if (String.valueOf(txtPass.getPassword()).equals("**********")) {
+            txtPass.setText("");
+            txtPass.setForeground(Color.black);
         }
-        if (txtUsuario.getText().isEmpty()){
-        txtUsuario.setText("Ingrese su nombre de usuario");
-        txtUsuario.setForeground(Color.gray);
+        if (txtUsuario.getText().isEmpty()) {
+            txtUsuario.setText("Ingrese su correo electrónico");
+            txtUsuario.setForeground(Color.gray);
         }
     }//GEN-LAST:event_txtPassMousePressed
 
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jIngresarMouseClicked
 
-        /* Create and display the form */
+        String email = txtUsuario.getText();
+        String contrasena = String.valueOf(txtPass.getPassword());
+
+        if (email.isEmpty() || contrasena.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.");
+            return;
+        }
+
+        try {
+            Connection conn = DBConnection.conectar();
+            if (conn == null) {
+                JOptionPane.showMessageDialog(this, "No se pudo establecer conexión con la base de datos.");
+                return;
+            }
+
+            String sql = "SELECT * FROM usuario WHERE email = ? AND contrasena = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, email);
+            ps.setString(2, contrasena);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso. Bienvenido " + rs.getString("nombre"));
+
+                // Abrir clienteUI
+                ClienteUI clienteVentana = new ClienteUI(contrasena, WIDTH); // Asegúrate de que esté importada
+                clienteVentana.setVisible(true);
+                clienteVentana.setLocationRelativeTo(null); // Centrar ventana
+
+                // Cerrar la ventana actual (frmLogin)
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Correo o contraseña incorrectos.");
+            }
+
+            rs.close();
+            ps.close();
+            conn.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Error al conectar con la base de datos: " + e.getMessage());
+        }
+
+
+    }//GEN-LAST:event_jIngresarMouseClicked
+
+    private void SetImageLabel(JLabel labelName, String root) {
+        ImageIcon image = new ImageIcon(root);
+        Icon icon = new ImageIcon(image.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
+        labelName.setIcon(icon);
+        this.repaint();
+    }
+
+    public static void main(String args[]) {
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new frmLogin().setVisible(true);
@@ -282,8 +343,9 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JPanel btnExit;
     private javax.swing.JPanel btnIngresar;
     private javax.swing.JPanel header;
+    private javax.swing.JLabel jIngresar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

@@ -2,8 +2,16 @@ package logica;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import javax.imageio.ImageIO;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import logica.DBConnection;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 
 public class ClienteUI extends JFrame {
     private JComboBox<String> comboTipo, comboColor, comboTalla;
@@ -108,5 +116,14 @@ public class ClienteUI extends JFrame {
         g2d.dispose();
         return bimage;
     }
+   
+    public static void main(String[] args) {
+    SwingUtilities.invokeLater(() -> {
+        // Simula un cliente con ID 1 y nombre "Cliente de prueba"
+        ClienteUI ventana = new ClienteUI("Cliente de prueba", 1);
+        ventana.setVisible(true);
+    });
+}
+
 }
 
