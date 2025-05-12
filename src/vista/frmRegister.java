@@ -75,17 +75,19 @@ public class frmRegister extends javax.swing.JFrame {
         btnIngresar.setLayout(btnIngresarLayout);
         btnIngresarLayout.setHorizontalGroup(
             btnIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnIngresarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnIngresarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         btnIngresarLayout.setVerticalGroup(
             btnIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnIngresarLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, 130, 50));
+        jPanel1.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 130, 50));
 
         Fondo2.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -132,11 +134,14 @@ public class frmRegister extends javax.swing.JFrame {
         btnExit.setLayout(btnExitLayout);
         btnExitLayout.setHorizontalGroup(
             btnExitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+            .addGroup(btnExitLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtExit, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addContainerGap())
         );
         btnExitLayout.setVerticalGroup(
             btnExitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtExit, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(txtExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         jPanel1.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 50));
@@ -166,13 +171,14 @@ public class frmRegister extends javax.swing.JFrame {
 
         jPanel1.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Crear Cuenta");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 250, -1));
 
         lUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lUsuario.setText("Correo electrónico");
-        jPanel1.add(lUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
+        jPanel1.add(lUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
         txtCorreo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtCorreo.setForeground(new java.awt.Color(153, 153, 153));
@@ -184,11 +190,11 @@ public class frmRegister extends javax.swing.JFrame {
                 txtCorreoMousePressed(evt);
             }
         });
-        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 320, 40));
+        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 320, 40));
 
         lPass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lPass.setText("Contraseña");
-        jPanel1.add(lPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
+        jPanel1.add(lPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
 
         txtPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtPass.setForeground(new java.awt.Color(153, 153, 153));
@@ -204,14 +210,14 @@ public class frmRegister extends javax.swing.JFrame {
                 txtPassActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 440, 40));
+        jPanel1.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 320, 40));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 450, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 320, 10));
 
         lPass1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lPass1.setText("Verificar Contraseña");
-        jPanel1.add(lPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, -1, -1));
+        jPanel1.add(lPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, -1, -1));
 
         VerificarPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         VerificarPass.setForeground(new java.awt.Color(153, 153, 153));
@@ -222,16 +228,16 @@ public class frmRegister extends javax.swing.JFrame {
                 VerificarPassMousePressed(evt);
             }
         });
-        jPanel1.add(VerificarPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 440, 40));
+        jPanel1.add(VerificarPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 320, 40));
 
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 450, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 320, 10));
 
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 450, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 320, 10));
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 450, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 320, 10));
 
         txtUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(153, 153, 153));
@@ -243,11 +249,16 @@ public class frmRegister extends javax.swing.JFrame {
                 txtUsuarioMousePressed(evt);
             }
         });
-        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 320, 40));
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 320, 40));
 
         lUsuario1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lUsuario1.setText("Nombre de usuario");
-        jPanel1.add(lUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+        jPanel1.add(lUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -420,6 +431,10 @@ public class frmRegister extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_txtUsuarioMousePressed
+
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     /**
      * @param args the command line arguments

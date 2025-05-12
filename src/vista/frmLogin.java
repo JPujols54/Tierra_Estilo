@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import logica.DBConnection;
-import vista.frmHome;
+import vista.frmCarrito;
 import logica.ClienteUI;
 
 public class frmLogin extends javax.swing.JFrame {
@@ -132,9 +132,9 @@ public class frmLogin extends javax.swing.JFrame {
 
         jPanel1.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("Iniciar Sesión");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 240, -1));
 
         lPass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lPass.setText("Contraseña");
@@ -150,14 +150,19 @@ public class frmLogin extends javax.swing.JFrame {
                 txtUsuarioMousePressed(evt);
             }
         });
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 320, 40));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 450, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 320, 10));
 
         lUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lUsuario.setText("Usuario");
-        jPanel1.add(lUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+        lUsuario.setText("Correo electrónico");
+        jPanel1.add(lUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
         txtPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtPass.setForeground(new java.awt.Color(153, 153, 153));
@@ -173,14 +178,15 @@ public class frmLogin extends javax.swing.JFrame {
                 txtPassActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 440, 40));
+        jPanel1.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 320, 40));
 
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 450, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 320, 10));
 
         btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jIngresar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jIngresar.setForeground(new java.awt.Color(204, 204, 204));
         jIngresar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jIngresar.setText("Ingresar");
         jIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -194,19 +200,17 @@ public class frmLogin extends javax.swing.JFrame {
         btnIngresarLayout.setHorizontalGroup(
             btnIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnIngresarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
         );
         btnIngresarLayout.setVerticalGroup(
             btnIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnIngresarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(btnIngresarLayout.createSequentialGroup()
+                .addComponent(jIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
         );
 
-        jPanel1.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 130, 50));
+        jPanel1.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 120, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -321,6 +325,10 @@ public class frmLogin extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jIngresarMouseClicked
+
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void SetImageLabel(JLabel labelName, String root) {
         ImageIcon image = new ImageIcon(root);
