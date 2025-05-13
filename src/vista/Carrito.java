@@ -288,7 +288,7 @@ public class Carrito extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPagoActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-      this.dispose();
+        this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     /**

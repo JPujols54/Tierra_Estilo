@@ -1,6 +1,7 @@
 
 package vista;
 
+import javax.swing.JOptionPane;
 import logica.Producto;
 
 
@@ -10,6 +11,7 @@ public class Mujeres extends javax.swing.JFrame {
 
     private String talla = "M";
 
+    private static Carrito carritoCompartido = new Carrito();
     
     public Mujeres() {
         initComponents();
@@ -24,34 +26,36 @@ public class Mujeres extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
         panel1 = new java.awt.Panel();
         panel2 = new java.awt.Panel();
         jLabel27 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
+        btnVerCarrito = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        topblanco = new javax.swing.JLabel();
+        ropa1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        top = new javax.swing.JLabel();
-        Cardigan = new javax.swing.JLabel();
+        btnCarrito1 = new javax.swing.JLabel();
+        ropa2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        cardiganC = new javax.swing.JLabel();
-        hoodie = new javax.swing.JLabel();
+        btnCarrito2 = new javax.swing.JLabel();
+        ropa3 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        blazer = new javax.swing.JLabel();
+        btnCarrito3 = new javax.swing.JLabel();
+        ropa4 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        sueter = new javax.swing.JLabel();
+        btnCarrito4 = new javax.swing.JLabel();
+        ropa5 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        camiseta = new javax.swing.JLabel();
+        btnCarrito5 = new javax.swing.JLabel();
+        ropa6 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
+        btnCarrito6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -64,11 +68,19 @@ public class Mujeres extends javax.swing.JFrame {
         jLabel27.setText("Categoría Mujeres");
 
         jLabel30.setFont(new java.awt.Font("Monotype Corsiva", 3, 36)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
         jLabel30.setText("X");
         jLabel30.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel30MouseClicked(evt);
+            }
+        });
+
+        btnVerCarrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
+        btnVerCarrito.setText("jLabel21");
+        btnVerCarrito.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVerCarrito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVerCarritoMouseClicked(evt);
             }
         });
 
@@ -77,22 +89,24 @@ public class Mujeres extends javax.swing.JFrame {
         panel2Layout.setHorizontalGroup(
             panel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(panel2Layout.createSequentialGroup()
-                .add(280, 280, 280)
+                .add(54, 54, 54)
+                .add(btnVerCarrito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(183, 183, 183)
                 .add(jLabel27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 348, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jLabel30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .add(127, 127, 127))
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(panel2Layout.createSequentialGroup()
+                .add(jLabel30)
+                .add(0, 0, Short.MAX_VALUE))
+            .add(panel2Layout.createSequentialGroup()
+                .add(37, 37, 37)
                 .add(panel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(panel2Layout.createSequentialGroup()
-                        .add(37, 37, 37)
-                        .add(jLabel27))
-                    .add(panel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(jLabel30)))
+                    .add(btnVerCarrito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel27))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
@@ -115,81 +129,87 @@ public class Mujeres extends javax.swing.JFrame {
         jLabel5.setText("jLabel5");
         jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        topblanco.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        topblanco.setText("Top Blanco corpiño");
+        ropa1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ropa1.setText("Top Blanco corpiño");
 
         jLabel8.setText("2000RD$");
 
-        top.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
-        top.setText("jLabel21");
-        top.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCarrito1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
+        btnCarrito1.setText("jLabel21");
+        btnCarrito1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCarrito1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                topMouseClicked(evt);
+                btnCarrito1MouseClicked(evt);
             }
         });
 
-        Cardigan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Cardigan.setText("Cardigan");
+        ropa2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ropa2.setText("Cardigan");
 
         jLabel10.setText("3500RD$");
 
-        cardiganC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
-        cardiganC.setText("jLabel21");
-        cardiganC.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCarrito2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
+        btnCarrito2.setText("jLabel21");
+        btnCarrito2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCarrito2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cardiganCMouseClicked(evt);
+                btnCarrito2MouseClicked(evt);
             }
         });
 
-        hoodie.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        hoodie.setText("Hoodie Femenino");
+        ropa3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ropa3.setText("Hoodie Femenino");
 
         jLabel12.setText("2500RD$");
 
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
-        jLabel25.setText("jLabel21");
-        jLabel25.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCarrito3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
+        btnCarrito3.setText("jLabel21");
+        btnCarrito3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCarrito3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel25MouseClicked(evt);
+                btnCarrito3MouseClicked(evt);
             }
         });
 
-        blazer.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        blazer.setText("Blazer");
+        ropa4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ropa4.setText("Blazer");
 
         jLabel14.setText("2000RD$");
 
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
-        jLabel26.setText("jLabel21");
-        jLabel26.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCarrito4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
+        btnCarrito4.setText("jLabel21");
+        btnCarrito4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCarrito4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel26MouseClicked(evt);
+                btnCarrito4MouseClicked(evt);
             }
         });
 
-        sueter.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        sueter.setText("Suéter Femenino");
+        ropa5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ropa5.setText("Suéter Femenino");
 
         jLabel16.setText("2000RD$");
 
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
-        jLabel28.setText("jLabel21");
-        jLabel28.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCarrito5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
+        btnCarrito5.setText("jLabel21");
+        btnCarrito5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCarrito5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel28MouseClicked(evt);
+                btnCarrito5MouseClicked(evt);
             }
         });
 
-        camiseta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        camiseta.setText("Camiseta femenina");
+        ropa6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ropa6.setText("Camiseta femenina");
 
         jLabel18.setText("2000RD$");
 
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
-        jLabel29.setText("jLabel21");
-        jLabel29.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCarrito6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
+        btnCarrito6.setText("jLabel21");
+        btnCarrito6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCarrito6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel29MouseClicked(evt);
+                btnCarrito6MouseClicked(evt);
             }
         });
 
@@ -206,46 +226,45 @@ public class Mujeres extends javax.swing.JFrame {
                     .add(panel1Layout.createSequentialGroup()
                         .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(topblanco))
+                            .add(ropa1))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(top, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(btnCarrito1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(panel1Layout.createSequentialGroup()
                         .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(blazer))
+                            .add(ropa4))
                         .add(66, 66, 66)
-                        .add(jLabel26, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 103, Short.MAX_VALUE)
+                        .add(btnCarrito4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .add(122, 122, 122)
                 .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                        .add(jLabel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(panel1Layout.createSequentialGroup()
-                            .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                .add(jLabel16, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(sueter))
-                            .add(44, 44, 44)
-                            .add(jLabel28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(jLabel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 215, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, panel1Layout.createSequentialGroup()
+                        .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabel16, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(ropa5))
+                        .add(44, 44, 44)
+                        .add(btnCarrito5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(jLabel10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(panel1Layout.createSequentialGroup()
-                        .add(Cardigan)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(cardiganC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .add(92, 92, 92)
+                        .add(ropa2)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 111, Short.MAX_VALUE)
+                        .add(btnCarrito2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jLabel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 206, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 109, Short.MAX_VALUE)
                 .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jLabel12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(panel1Layout.createSequentialGroup()
-                        .add(hoodie)
+                        .add(ropa3)
                         .add(18, 18, 18)
-                        .add(jLabel25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(btnCarrito3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(jLabel2)
                     .add(jLabel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 212, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabel18, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(panel1Layout.createSequentialGroup()
-                        .add(camiseta)
+                        .add(ropa6)
                         .add(18, 18, 18)
-                        .add(jLabel29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .add(72, 72, 72))
+                        .add(btnCarrito6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .add(130, 130, 130))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -253,143 +272,153 @@ public class Mujeres extends javax.swing.JFrame {
                 .add(panel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(28, 28, 28)
                 .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 257, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 257, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 257, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(panel1Layout.createSequentialGroup()
-                        .add(topblanco)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jLabel8))
-                    .add(top, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 257, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 257, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(panel1Layout.createSequentialGroup()
+                                .add(ropa1)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jLabel8))
+                            .add(btnCarrito1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(panel1Layout.createSequentialGroup()
+                                .add(ropa3)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jLabel12))
+                            .add(btnCarrito3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(75, 75, 75)
+                        .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 262, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 257, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(panel1Layout.createSequentialGroup()
+                                .add(ropa4)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jLabel14))
+                            .add(btnCarrito4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(panel1Layout.createSequentialGroup()
+                                .add(ropa6)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jLabel18))
+                            .add(btnCarrito6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                     .add(panel1Layout.createSequentialGroup()
+                        .add(jLabel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 257, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(Cardigan)
-                            .add(cardiganC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(ropa2)
+                            .add(btnCarrito2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jLabel10))
-                    .add(panel1Layout.createSequentialGroup()
-                        .add(hoodie)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jLabel12))
-                    .add(jLabel25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(59, 59, 59)
-                .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(jLabel10)
+                        .add(59, 59, 59)
                         .add(jLabel6)
-                        .add(jLabel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 262, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jLabel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 257, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(panel1Layout.createSequentialGroup()
-                        .add(sueter)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jLabel16))
-                    .add(panel1Layout.createSequentialGroup()
-                        .add(blazer)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jLabel14))
-                    .add(jLabel26, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(panel1Layout.createSequentialGroup()
-                        .add(camiseta)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jLabel18))
-                    .add(jLabel29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(panel1Layout.createSequentialGroup()
+                                .add(ropa5)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jLabel16))
+                            .add(btnCarrito5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
+
+        jScrollPane1.setViewportView(panel1);
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(panel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 918, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(panel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jScrollPane1)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void topMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topMouseClicked
-       String nombre = topblanco.getText();
-       String Tabla = "M";
-       double precio = 2000.0;
-       
-       Producto producto = new Producto(nombre,talla, precio);
-       
-        Carrito carrito =new Carrito();
-        carrito.agregarProducto(producto);
-        carrito.setVisible(true);
-    }//GEN-LAST:event_topMouseClicked
+    private void btnCarrito1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCarrito1MouseClicked
+      String nombre = ropa1.getText();
+    String talla = "M";
+    double precio = 2000.0;
 
-    private void cardiganCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardiganCMouseClicked
-    
-       
-      
-         String nombre = Cardigan.getText();
-       String Tabla = "M";
-       double precio = 2000.0;
-       
-       Producto producto = new Producto(nombre,talla, precio);
-       
-        Carrito carrito =new Carrito();
-        carrito.agregarProducto(producto);
-        carrito.setVisible(true);
-    }//GEN-LAST:event_cardiganCMouseClicked
+    Producto producto = new Producto(nombre, talla, precio);
+    carritoCompartido.agregarProducto(producto); // usas el carrito compartido
+
+    JOptionPane.showMessageDialog(rootPane, "Producto agregado al carrito.");
+    }//GEN-LAST:event_btnCarrito1MouseClicked
+
+    private void btnCarrito2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCarrito2MouseClicked
+    String nombre = ropa2.getText();
+    String talla = "M";
+    double precio = 3500.0;
+
+    Producto producto = new Producto(nombre, talla, precio);
+    carritoCompartido.agregarProducto(producto); // usas el carrito compartido
+
+    JOptionPane.showMessageDialog(rootPane, "Producto agregado al carrito.");
+    }//GEN-LAST:event_btnCarrito2MouseClicked
 
     private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
         this.dispose();
     }//GEN-LAST:event_jLabel30MouseClicked
 
-    private void jLabel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel25MouseClicked
-     String nombre = hoodie.getText();
-       String Tabla = "M";
-       double precio = 2500.0;
-       
-       Producto producto = new Producto(nombre,talla, precio);
-       
-        Carrito carrito =new Carrito();
-        carrito.agregarProducto(producto);
-        carrito.setVisible(true);
-    }//GEN-LAST:event_jLabel25MouseClicked
+    private void btnCarrito3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCarrito3MouseClicked
+     String nombre = ropa3.getText();
+    String talla = "M";
+    double precio = 2500.0;
 
-    private void jLabel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel26MouseClicked
-         String nombre = blazer.getText();
-       String Tabla = "M";
-       double precio = 2000.0;
-       
-       Producto producto = new Producto(nombre,talla, precio);
-        Carrito carrito =new Carrito();
-        carrito.agregarProducto(producto);
-    }//GEN-LAST:event_jLabel26MouseClicked
+    Producto producto = new Producto(nombre, talla, precio);
+    carritoCompartido.agregarProducto(producto); // usas el carrito compartido
 
-    private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
-          String nombre = sueter.getText();
-       String Tabla = "M";
-       double precio = 2000.0;
-       
-       Producto producto = new Producto(nombre,talla, precio);
-       
-        Carrito carrito =new Carrito();
-        carrito.agregarProducto(producto);
-        carrito.setVisible(true);
-    }//GEN-LAST:event_jLabel28MouseClicked
+    JOptionPane.showMessageDialog(rootPane, "Producto agregado al carrito.");
+    }//GEN-LAST:event_btnCarrito3MouseClicked
 
-    private void jLabel29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel29MouseClicked
-       String nombre = camiseta.getText();
-       String Tabla = "M";
-       double precio = 2000.0;
-       
-       Producto producto = new Producto(nombre,talla, precio);
-       
-        Carrito carrito =new Carrito();
-        carrito.agregarProducto(producto);
-        carrito.setVisible(true);
-    }//GEN-LAST:event_jLabel29MouseClicked
+    private void btnCarrito4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCarrito4MouseClicked
+       String nombre = ropa4.getText();
+    String talla = "M";
+    double precio = 2000.0;
+
+    Producto producto = new Producto(nombre, talla, precio);
+    carritoCompartido.agregarProducto(producto); // usas el carrito compartido
+
+    JOptionPane.showMessageDialog(rootPane, "Producto agregado al carrito.");
+    }//GEN-LAST:event_btnCarrito4MouseClicked
+
+    private void btnCarrito5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCarrito5MouseClicked
+          String nombre = ropa5.getText();
+    String talla = "M";
+    double precio = 2000.0;
+
+    Producto producto = new Producto(nombre, talla, precio);
+    carritoCompartido.agregarProducto(producto); // usas el carrito compartido
+
+    JOptionPane.showMessageDialog(rootPane, "Producto agregado al carrito.");
+    }//GEN-LAST:event_btnCarrito5MouseClicked
+
+    private void btnCarrito6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCarrito6MouseClicked
+       String nombre = ropa6.getText();
+    String talla = "M";
+    double precio = 2000.0;
+
+    Producto producto = new Producto(nombre, talla, precio);
+    carritoCompartido.agregarProducto(producto); // usas el carrito compartido
+
+    JOptionPane.showMessageDialog(rootPane, "Producto agregado al carrito.");
+    }//GEN-LAST:event_btnCarrito6MouseClicked
+
+    private void btnVerCarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVerCarritoMouseClicked
+        carritoCompartido.setVisible(true);
+    }//GEN-LAST:event_btnVerCarritoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -427,11 +456,13 @@ public class Mujeres extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Cardigan;
-    private javax.swing.JLabel blazer;
-    private javax.swing.JLabel camiseta;
-    private javax.swing.JLabel cardiganC;
-    private javax.swing.JLabel hoodie;
+    private javax.swing.JLabel btnCarrito1;
+    private javax.swing.JLabel btnCarrito2;
+    private javax.swing.JLabel btnCarrito3;
+    private javax.swing.JLabel btnCarrito4;
+    private javax.swing.JLabel btnCarrito5;
+    private javax.swing.JLabel btnCarrito6;
+    private javax.swing.JLabel btnVerCarrito;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -439,21 +470,21 @@ public class Mujeres extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JScrollPane jScrollPane1;
     private java.awt.Panel panel1;
     private java.awt.Panel panel2;
-    private javax.swing.JLabel sueter;
-    private javax.swing.JLabel top;
-    private javax.swing.JLabel topblanco;
+    private javax.swing.JLabel ropa1;
+    private javax.swing.JLabel ropa2;
+    private javax.swing.JLabel ropa3;
+    private javax.swing.JLabel ropa4;
+    private javax.swing.JLabel ropa5;
+    private javax.swing.JLabel ropa6;
     // End of variables declaration//GEN-END:variables
 }

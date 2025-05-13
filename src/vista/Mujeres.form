@@ -26,431 +26,480 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="panel1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="918" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="panel1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="java.awt.Panel" name="panel1">
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
 
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="panel2" alignment="0" max="32767" attributes="0"/>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="197" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel8" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                              <Component id="topblanco" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="top" min="-2" pref="43" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel14" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                              <Component id="blazer" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                          <Component id="jLabel26" min="-2" pref="43" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace pref="103" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Component id="jLabel6" min="-2" pref="201" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel16" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                                  <Component id="sueter" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                              <Component id="jLabel28" min="-2" pref="43" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel3" alignment="1" min="-2" pref="215" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jLabel10" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="Cardigan" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="cardiganC" min="-2" pref="43" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel12" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="hoodie" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel25" min="-2" pref="43" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel5" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
-                      <Component id="jLabel18" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="camiseta" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel29" min="-2" pref="43" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Component id="panel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel1" min="-2" pref="257" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" pref="257" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" pref="257" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="topblanco" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="top" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="Cardigan" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cardiganC" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="hoodie" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jLabel25" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="3" min="-2" pref="262" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jLabel4" min="-2" pref="257" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="sueter" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="blazer" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jLabel26" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="camiseta" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jLabel29" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="jLabel28" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="60" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Container class="java.awt.Panel" name="panel2">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="ff" type="rgb"/>
-            </Property>
-          </Properties>
+        <Container class="java.awt.Panel" name="panel1">
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="panel2" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="280" max="-2" attributes="0"/>
-                      <Component id="jLabel27" min="-2" pref="348" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel30" min="-2" pref="37" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="197" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel8" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                                  <Component id="ropa1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btnCarrito1" min="-2" pref="43" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel14" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                                  <Component id="ropa4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                              <Component id="btnCarrito4" min="-2" pref="43" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel16" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                                  <Component id="ropa5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="btnCarrito5" min="-2" pref="43" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jLabel3" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabel10" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="ropa2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="111" max="32767" attributes="0"/>
+                              <Component id="btnCarrito2" min="-2" pref="43" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jLabel6" alignment="0" min="-2" pref="206" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="109" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel12" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="ropa3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnCarrito3" min="-2" pref="43" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
+                          <Component id="jLabel18" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="ropa6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnCarrito6" min="-2" pref="43" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="panel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel1" min="-2" pref="257" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" pref="257" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="ropa1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="btnCarrito1" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="ropa3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="btnCarrito3" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel5" min="-2" pref="262" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" min="-2" pref="257" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="ropa4" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="btnCarrito4" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="ropa6" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="btnCarrito6" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel3" min="-2" pref="257" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="ropa2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnCarrito2" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="ropa5" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="btnCarrito5" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="47" max="32767" attributes="0"/>
+                      <EmptySpace pref="85" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel27">
+            <Container class="java.awt.Panel" name="panel2">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="36" style="1"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Categor&#xed;a Mujeres"/>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                          <Component id="btnVerCarrito" min="-2" pref="43" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
+                          <Component id="jLabel27" min="-2" pref="348" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jLabel30" min="-2" pref="37" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnVerCarrito" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="47" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel27">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="36" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Categor&#xed;a Mujeres"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel30">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Monotype Corsiva" size="36" style="3"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="X"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel30MouseClicked"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="btnVerCarrito">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/icono de carrito 22.jpg"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="jLabel21"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnVerCarritoMouseClicked"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/top corpi&#xf1;o 22.jpg"/>
+                </Property>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder thickness="2"/>
+                  </Border>
+                </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel30">
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder thickness="2"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/Hoodie femenino 123.jpg"/>
+                </Property>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder thickness="2"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel4">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/Blazer 1234.png"/>
+                </Property>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder thickness="2"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel6">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/sueter femenino 1234.jpg"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="jLabel6"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder thickness="2"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/camiseta 333.jpg"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="jLabel5"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder thickness="2"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ropa1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Monotype Corsiva" size="36" style="3"/>
+                  <Font name="Segoe UI" size="14" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                <Property name="text" type="java.lang.String" value="Top Blanco corpi&#xf1;o"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel8">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="2000RD$"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="btnCarrito1">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/icono de carrito 22.jpg"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="X"/>
+                <Property name="text" type="java.lang.String" value="jLabel21"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel30MouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCarrito1MouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ropa2">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Cardigan"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel10">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="3500RD$"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="btnCarrito2">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/icono de carrito 22.jpg"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="jLabel21"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCarrito2MouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ropa3">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Hoodie Femenino"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel12">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="2500RD$"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="btnCarrito3">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/icono de carrito 22.jpg"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="jLabel21"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCarrito3MouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ropa4">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Blazer"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel14">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="2000RD$"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="btnCarrito4">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/icono de carrito 22.jpg"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="jLabel21"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCarrito4MouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ropa5">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Su&#xe9;ter Femenino"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel16">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="2000RD$"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="btnCarrito5">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/icono de carrito 22.jpg"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="jLabel21"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCarrito5MouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ropa6">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Camiseta femenina"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel18">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="2000RD$"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="btnCarrito6">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/icono de carrito 22.jpg"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="jLabel21"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCarrito6MouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/top corpi&#xf1;o 22.jpg"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder thickness="2"/>
-              </Border>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
-          <Properties>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder thickness="2"/>
-              </Border>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/Hoodie femenino 123.jpg"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder thickness="2"/>
-              </Border>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/Blazer 1234.png"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder thickness="2"/>
-              </Border>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/sueter femenino 1234.jpg"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="jLabel6"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder thickness="2"/>
-              </Border>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/camiseta 333.jpg"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="jLabel5"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder thickness="2"/>
-              </Border>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="topblanco">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Top Blanco corpi&#xf1;o"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel8">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="2000RD$"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="top">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/icono de carrito 22.jpg"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="jLabel21"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="topMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="Cardigan">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Cardigan"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel10">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="3500RD$"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="cardiganC">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/icono de carrito 22.jpg"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="jLabel21"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cardiganCMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="hoodie">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Hoodie Femenino"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel12">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="2500RD$"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel25">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/icono de carrito 22.jpg"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="jLabel21"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel25MouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="blazer">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Blazer"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel14">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="2000RD$"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel26">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/icono de carrito 22.jpg"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="jLabel21"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel26MouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="sueter">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Su&#xe9;ter Femenino"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel16">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="2000RD$"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel28">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/icono de carrito 22.jpg"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="jLabel21"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel28MouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="camiseta">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Camiseta femenina"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel18">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="2000RD$"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel29">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/icono de carrito 22.jpg"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="jLabel21"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel29MouseClicked"/>
-          </Events>
-        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
