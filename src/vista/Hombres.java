@@ -130,7 +130,7 @@ public class Hombres extends javax.swing.JFrame {
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
         jLabel26.setText("jLabel21");
 
-        panel1.setBackground(new java.awt.Color(255, 204, 204));
+        panel1.setBackground(new java.awt.Color(0, 153, 255));
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel27.setText("Categoría Hombres");
@@ -140,16 +140,16 @@ public class Hombres extends javax.swing.JFrame {
         panel1Layout.setHorizontalGroup(
             panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(panel1Layout.createSequentialGroup()
-                .add(317, 317, 317)
+                .add(280, 280, 280)
                 .add(jLabel27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 348, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(panel1Layout.createSequentialGroup()
-                .add(34, 34, 34)
+                .add(37, 37, 37)
                 .add(jLabel27)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         org.jdesktop.layout.GroupLayout jPanel3Layout = new org.jdesktop.layout.GroupLayout(jPanel3);
