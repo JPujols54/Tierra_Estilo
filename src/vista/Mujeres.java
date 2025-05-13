@@ -1,18 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package vista;
 
-/**
- *
- * @author keile
- */
-public class Mujeres extends javax.swing.JFrame {
+import logica.Producto;
 
-    /**
-     * Creates new form Mujeres
-     */
+
+public class Mujeres extends javax.swing.JFrame {
+    
+    int xMosuse, yMouse;
+
+    private String talla = "M";
+
+    
     public Mujeres() {
         initComponents();
     }
@@ -29,37 +27,50 @@ public class Mujeres extends javax.swing.JFrame {
         panel1 = new java.awt.Panel();
         panel2 = new java.awt.Panel();
         jLabel27 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        topblanco = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        top = new javax.swing.JLabel();
+        Cardigan = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        cardiganC = new javax.swing.JLabel();
+        hoodie = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        blazer = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        sueter = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        camiseta = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         panel2.setBackground(new java.awt.Color(255, 204, 204));
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel27.setText("Categoría Mujeres");
+
+        jLabel30.setFont(new java.awt.Font("Monotype Corsiva", 3, 36)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel30.setText("X");
+        jLabel30.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel30MouseClicked(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout panel2Layout = new org.jdesktop.layout.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
@@ -68,20 +79,26 @@ public class Mujeres extends javax.swing.JFrame {
             .add(panel2Layout.createSequentialGroup()
                 .add(280, 280, 280)
                 .add(jLabel27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 348, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jLabel30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(panel2Layout.createSequentialGroup()
-                .add(37, 37, 37)
-                .add(jLabel27)
+                .add(panel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(panel2Layout.createSequentialGroup()
+                        .add(37, 37, 37)
+                        .add(jLabel27))
+                    .add(panel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jLabel30)))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/top corpiño 22.jpg"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/Cardigan 222.jpg"))); // NOI18N
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Hoodie femenino 123.jpg"))); // NOI18N
@@ -98,53 +115,83 @@ public class Mujeres extends javax.swing.JFrame {
         jLabel5.setText("jLabel5");
         jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setText("Top Blanco corpiño");
+        topblanco.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        topblanco.setText("Top Blanco corpiño");
 
         jLabel8.setText("2000RD$");
 
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
-        jLabel23.setText("jLabel21");
+        top.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
+        top.setText("jLabel21");
+        top.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                topMouseClicked(evt);
+            }
+        });
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel9.setText("Cardigan");
+        Cardigan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Cardigan.setText("Cardigan");
 
         jLabel10.setText("3500RD$");
 
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
-        jLabel24.setText("jLabel21");
+        cardiganC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
+        cardiganC.setText("jLabel21");
+        cardiganC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cardiganCMouseClicked(evt);
+            }
+        });
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel11.setText("Hoodie Femenino");
+        hoodie.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        hoodie.setText("Hoodie Femenino");
 
         jLabel12.setText("2500RD$");
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
         jLabel25.setText("jLabel21");
+        jLabel25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel25MouseClicked(evt);
+            }
+        });
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel13.setText("Blazer");
+        blazer.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        blazer.setText("Blazer");
 
         jLabel14.setText("2000RD$");
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
         jLabel26.setText("jLabel21");
+        jLabel26.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel26MouseClicked(evt);
+            }
+        });
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel15.setText("Suéter Femenino");
+        sueter.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        sueter.setText("Suéter Femenino");
 
         jLabel16.setText("2000RD$");
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
         jLabel28.setText("jLabel21");
+        jLabel28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel28MouseClicked(evt);
+            }
+        });
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel17.setText("Camiseta femenina");
+        camiseta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        camiseta.setText("Camiseta femenina");
 
         jLabel18.setText("2000RD$");
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
         jLabel29.setText("jLabel21");
+        jLabel29.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel29MouseClicked(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout panel1Layout = new org.jdesktop.layout.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
@@ -159,13 +206,13 @@ public class Mujeres extends javax.swing.JFrame {
                     .add(panel1Layout.createSequentialGroup()
                         .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel7))
+                            .add(topblanco))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jLabel23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(top, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(panel1Layout.createSequentialGroup()
                         .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel13))
+                            .add(blazer))
                         .add(66, 66, 66)
                         .add(jLabel26, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 103, Short.MAX_VALUE)
@@ -175,27 +222,27 @@ public class Mujeres extends javax.swing.JFrame {
                         .add(panel1Layout.createSequentialGroup()
                             .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                 .add(jLabel16, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(jLabel15))
+                                .add(sueter))
                             .add(44, 44, 44)
                             .add(jLabel28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .add(jLabel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 215, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(jLabel10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(panel1Layout.createSequentialGroup()
-                        .add(jLabel9)
+                        .add(Cardigan)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jLabel24, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(cardiganC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .add(92, 92, 92)
                 .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jLabel12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(panel1Layout.createSequentialGroup()
-                        .add(jLabel11)
+                        .add(hoodie)
                         .add(18, 18, 18)
                         .add(jLabel25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(jLabel2)
                     .add(jLabel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 212, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabel18, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(panel1Layout.createSequentialGroup()
-                        .add(jLabel17)
+                        .add(camiseta)
                         .add(18, 18, 18)
                         .add(jLabel29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .add(72, 72, 72))
@@ -212,18 +259,18 @@ public class Mujeres extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(panel1Layout.createSequentialGroup()
-                        .add(jLabel7)
+                        .add(topblanco)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jLabel8))
-                    .add(jLabel23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(top, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(panel1Layout.createSequentialGroup()
                         .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel9)
-                            .add(jLabel24, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(Cardigan)
+                            .add(cardiganC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jLabel10))
                     .add(panel1Layout.createSequentialGroup()
-                        .add(jLabel11)
+                        .add(hoodie)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jLabel12))
                     .add(jLabel25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -236,16 +283,16 @@ public class Mujeres extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(panel1Layout.createSequentialGroup()
-                        .add(jLabel15)
+                        .add(sueter)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jLabel16))
                     .add(panel1Layout.createSequentialGroup()
-                        .add(jLabel13)
+                        .add(blazer)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jLabel14))
                     .add(jLabel26, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(panel1Layout.createSequentialGroup()
-                        .add(jLabel17)
+                        .add(camiseta)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jLabel18))
                     .add(jLabel29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -266,6 +313,83 @@ public class Mujeres extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void topMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_topMouseClicked
+       String nombre = topblanco.getText();
+       String Tabla = "M";
+       double precio = 2000.0;
+       
+       Producto producto = new Producto(nombre,talla, precio);
+       
+        Carrito carrito =new Carrito();
+        carrito.agregarProducto(producto);
+        carrito.setVisible(true);
+    }//GEN-LAST:event_topMouseClicked
+
+    private void cardiganCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardiganCMouseClicked
+    
+       
+      
+         String nombre = Cardigan.getText();
+       String Tabla = "M";
+       double precio = 2000.0;
+       
+       Producto producto = new Producto(nombre,talla, precio);
+       
+        Carrito carrito =new Carrito();
+        carrito.agregarProducto(producto);
+        carrito.setVisible(true);
+    }//GEN-LAST:event_cardiganCMouseClicked
+
+    private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel30MouseClicked
+
+    private void jLabel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel25MouseClicked
+     String nombre = hoodie.getText();
+       String Tabla = "M";
+       double precio = 2500.0;
+       
+       Producto producto = new Producto(nombre,talla, precio);
+       
+        Carrito carrito =new Carrito();
+        carrito.agregarProducto(producto);
+        carrito.setVisible(true);
+    }//GEN-LAST:event_jLabel25MouseClicked
+
+    private void jLabel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel26MouseClicked
+         String nombre = blazer.getText();
+       String Tabla = "M";
+       double precio = 2000.0;
+       
+       Producto producto = new Producto(nombre,talla, precio);
+        Carrito carrito =new Carrito();
+        carrito.agregarProducto(producto);
+    }//GEN-LAST:event_jLabel26MouseClicked
+
+    private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
+          String nombre = sueter.getText();
+       String Tabla = "M";
+       double precio = 2000.0;
+       
+       Producto producto = new Producto(nombre,talla, precio);
+       
+        Carrito carrito =new Carrito();
+        carrito.agregarProducto(producto);
+        carrito.setVisible(true);
+    }//GEN-LAST:event_jLabel28MouseClicked
+
+    private void jLabel29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel29MouseClicked
+       String nombre = camiseta.getText();
+       String Tabla = "M";
+       double precio = 2000.0;
+       
+       Producto producto = new Producto(nombre,talla, precio);
+       
+        Carrito carrito =new Carrito();
+        carrito.agregarProducto(producto);
+        carrito.setVisible(true);
+    }//GEN-LAST:event_jLabel29MouseClicked
 
     /**
      * @param args the command line arguments
@@ -303,32 +427,33 @@ public class Mujeres extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Cardigan;
+    private javax.swing.JLabel blazer;
+    private javax.swing.JLabel camiseta;
+    private javax.swing.JLabel cardiganC;
+    private javax.swing.JLabel hoodie;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private java.awt.Panel panel1;
     private java.awt.Panel panel2;
+    private javax.swing.JLabel sueter;
+    private javax.swing.JLabel top;
+    private javax.swing.JLabel topblanco;
     // End of variables declaration//GEN-END:variables
 }

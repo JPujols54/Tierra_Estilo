@@ -55,6 +55,7 @@ public class Hombres extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         panel1 = new java.awt.Panel();
         jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,6 +136,15 @@ public class Hombres extends javax.swing.JFrame {
         jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel27.setText("Categoría Hombres");
 
+        jLabel28.setFont(new java.awt.Font("Monotype Corsiva", 3, 36)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel28.setText("X");
+        jLabel28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel28MouseClicked(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout panel1Layout = new org.jdesktop.layout.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
         panel1Layout.setHorizontalGroup(
@@ -142,13 +152,20 @@ public class Hombres extends javax.swing.JFrame {
             .add(panel1Layout.createSequentialGroup()
                 .add(280, 280, 280)
                 .add(jLabel27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 348, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jLabel28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(56, 56, 56))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(panel1Layout.createSequentialGroup()
-                .add(37, 37, 37)
-                .add(jLabel27)
+                .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(panel1Layout.createSequentialGroup()
+                        .add(37, 37, 37)
+                        .add(jLabel27))
+                    .add(panel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jLabel28)))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
@@ -315,6 +332,10 @@ public class Hombres extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel28MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -371,6 +392,7 @@ public class Hombres extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

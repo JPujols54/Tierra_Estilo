@@ -1,14 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package vista;
 
-/**
- *
- * @author keile
- */
+import logica.Producto;
+
+
 public class Niños extends javax.swing.JFrame {
+    String talla = "M";
 
     /**
      * Creates new form Niños
@@ -30,29 +27,29 @@ public class Niños extends javax.swing.JFrame {
         panel2 = new java.awt.Panel();
         jLabel27 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        chaleco = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        sueter1 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        sueter2 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        falda = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        enterizo = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
+        pijama = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,51 +79,71 @@ public class Niños extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/resized_image_197x257.png"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setText("Chaleco acolchado ");
+        chaleco.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        chaleco.setText("Chaleco acolchado ");
 
         jLabel8.setText("2200RD$");
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
         jLabel23.setText("jLabel21");
+        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel23MouseClicked(evt);
+            }
+        });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/sueter niños.png"))); // NOI18N
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel9.setText("Suéter Femenino");
+        sueter1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        sueter1.setText("Suéter Femenino");
 
         jLabel10.setText("2000$");
 
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
         jLabel24.setText("jLabel21");
+        jLabel24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel24MouseClicked(evt);
+            }
+        });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/sueter masculino.png"))); // NOI18N
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel11.setText("Suéter Masculino");
+        sueter2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        sueter2.setText("Suéter Masculino");
 
         jLabel12.setText("2500RD$");
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
         jLabel25.setText("jLabel21");
+        jLabel25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel25MouseClicked(evt);
+            }
+        });
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/falda niñas.png"))); // NOI18N
-        jLabel6.setText("jLabel6");
-        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        falda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/falda niñas.png"))); // NOI18N
+        falda.setText("jLabel6");
+        falda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
         jLabel26.setText("jLabel21");
+        jLabel26.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel26MouseClicked(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel13.setText("Faldas");
 
         jLabel14.setText("2000RD$");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/enterizooooooooooooooo.png"))); // NOI18N
-        jLabel5.setText("jLabel5");
-        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        enterizo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/enterizooooooooooooooo.png"))); // NOI18N
+        enterizo.setText("jLabel5");
+        enterizo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         jLabel16.setText("1500RD$");
 
@@ -135,6 +152,11 @@ public class Niños extends javax.swing.JFrame {
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
         jLabel28.setText("jLabel21");
+        jLabel28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel28MouseClicked(evt);
+            }
+        });
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel17.setText("Pijama Masculina");
@@ -143,9 +165,14 @@ public class Niños extends javax.swing.JFrame {
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono de carrito 22.jpg"))); // NOI18N
         jLabel29.setText("jLabel21");
+        jLabel29.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel29MouseClicked(evt);
+            }
+        });
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pijamaaaaaaaaaa.png"))); // NOI18N
-        jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        pijama.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pijamaaaaaaaaaa.png"))); // NOI18N
+        pijama.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         org.jdesktop.layout.GroupLayout panel1Layout = new org.jdesktop.layout.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
@@ -159,10 +186,10 @@ public class Niños extends javax.swing.JFrame {
                     .add(panel1Layout.createSequentialGroup()
                         .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel7))
+                            .add(chaleco))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(jLabel23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jLabel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(falda, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(panel1Layout.createSequentialGroup()
                         .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -176,7 +203,7 @@ public class Niños extends javax.swing.JFrame {
                             .add(panel1Layout.createSequentialGroup()
                                 .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                     .add(jLabel10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(jLabel9))
+                                    .add(sueter1))
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .add(jLabel24, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(jLabel2))
@@ -185,7 +212,7 @@ public class Niños extends javax.swing.JFrame {
                             .add(jLabel4)
                             .add(jLabel12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(panel1Layout.createSequentialGroup()
-                                .add(jLabel11)
+                                .add(sueter2)
                                 .add(18, 18, 18)
                                 .add(jLabel25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
                     .add(panel1Layout.createSequentialGroup()
@@ -196,7 +223,7 @@ public class Niños extends javax.swing.JFrame {
                                     .add(jLabel15))
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .add(jLabel28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(jLabel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 212, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(enterizo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 212, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .add(83, 83, 83)
                         .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                             .add(panel1Layout.createSequentialGroup()
@@ -205,7 +232,7 @@ public class Niños extends javax.swing.JFrame {
                                     .add(jLabel17))
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .add(jLabel29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(jLabel19))))
+                            .add(pijama))))
                 .addContainerGap(112, Short.MAX_VALUE))
         );
         panel1Layout.setVerticalGroup(
@@ -220,25 +247,26 @@ public class Niños extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(panel1Layout.createSequentialGroup()
-                        .add(jLabel7)
+                        .add(chaleco)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jLabel8))
                     .add(jLabel23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabel24, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(panel1Layout.createSequentialGroup()
-                        .add(jLabel9)
+                        .add(sueter1)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jLabel10))
                     .add(panel1Layout.createSequentialGroup()
-                        .add(jLabel11)
+                        .add(sueter2)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jLabel12))
                     .add(jLabel25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(46, 46, 46)
-                .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel6)
-                    .add(jLabel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 262, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel19, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 257, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(pijama, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 257, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(falda)
+                        .add(enterizo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 262, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .add(18, 18, 18)
                 .add(panel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, panel1Layout.createSequentialGroup()
@@ -280,6 +308,80 @@ public class Niños extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
+     String nombre = chaleco.getText();
+       String Tabla = "M";
+       double precio = 2200.0;
+        
+       
+       Producto producto = new Producto(nombre,talla, precio);
+       
+        Carrito carrito =new Carrito();
+        carrito.agregarProducto(producto);
+        carrito.setVisible(true);
+    }//GEN-LAST:event_jLabel23MouseClicked
+
+    private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
+       String nombre = sueter1.getText();
+       String Tabla = "M";
+       double precio = 2000.0;
+       
+       
+       Producto producto = new Producto(nombre,talla, precio);
+       
+        Carrito carrito =new Carrito();
+        carrito.agregarProducto(producto);
+        carrito.setVisible(true);
+    }//GEN-LAST:event_jLabel24MouseClicked
+
+    private void jLabel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel25MouseClicked
+      String nombre = sueter2.getText();
+       String Tabla = "M";
+       double precio = 2500.0;
+       
+       Producto producto = new Producto(nombre,talla, precio);
+       
+        Carrito carrito =new Carrito();
+        carrito.agregarProducto(producto);
+        carrito.setVisible(true);
+    }//GEN-LAST:event_jLabel25MouseClicked
+
+    private void jLabel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel26MouseClicked
+        String nombre = falda.getText();
+       String Tabla = "M";
+       double precio = 2000.0;
+       
+       Producto producto = new Producto(nombre,talla, precio);
+       
+        Carrito carrito =new Carrito();
+        carrito.agregarProducto(producto);
+        carrito.setVisible(true);
+    }//GEN-LAST:event_jLabel26MouseClicked
+
+    private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
+      String nombre = enterizo.getText();
+       String Tabla = "M";
+       double precio = 2000.0;
+       
+       Producto producto = new Producto(nombre,talla, precio);
+       
+        Carrito carrito =new Carrito();
+        carrito.agregarProducto(producto);
+        carrito.setVisible(true);
+    }//GEN-LAST:event_jLabel28MouseClicked
+
+    private void jLabel29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel29MouseClicked
+       String nombre = pijama.getText();
+       String Tabla = "M";
+       double precio = 1750.0;
+       
+       Producto producto = new Producto(nombre,talla, precio);
+       
+        Carrito carrito =new Carrito();
+        carrito.agregarProducto(producto);
+        carrito.setVisible(true);
+    }//GEN-LAST:event_jLabel29MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -316,9 +418,11 @@ public class Niños extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel chaleco;
+    private javax.swing.JLabel enterizo;
+    private javax.swing.JLabel falda;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -326,7 +430,6 @@ public class Niños extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -336,12 +439,11 @@ public class Niños extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private java.awt.Panel panel1;
     private java.awt.Panel panel2;
+    private javax.swing.JLabel pijama;
+    private javax.swing.JLabel sueter1;
+    private javax.swing.JLabel sueter2;
     // End of variables declaration//GEN-END:variables
 }
