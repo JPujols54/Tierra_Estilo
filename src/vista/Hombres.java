@@ -68,7 +68,7 @@ public class Hombres extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CAMISA DEPORTIVA 2.jpg"))); // NOI18N
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\keile\\OneDrive\\Documents\\Trabajos Laura FOLB\\DEPORTIVA-CUELLO-REDONDO-MANGA-LARGA-NEGRA-copia-scaled 2222222222.jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/DEPORTIVA-CUELLO-REDONDO-MANGA-LARGA-NEGRA-copia-scaled 2222222222.jpg"))); // NOI18N
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/camisa negra 333.jpg"))); // NOI18N
@@ -221,7 +221,7 @@ public class Hombres extends javax.swing.JFrame {
                                     .add(jLabel18, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .add(jLabel26, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .add(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jLabel10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 786, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)

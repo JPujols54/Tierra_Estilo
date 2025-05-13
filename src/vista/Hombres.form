@@ -140,7 +140,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="48" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
@@ -277,7 +277,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\keile\OneDrive\Documents\Trabajos Laura FOLB\DEPORTIVA-CUELLO-REDONDO-MANGA-LARGA-NEGRA-copia-scaled 2222222222.jpg"/>
+              <Image iconType="3" name="/Imagenes/DEPORTIVA-CUELLO-REDONDO-MANGA-LARGA-NEGRA-copia-scaled 2222222222.jpg"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
