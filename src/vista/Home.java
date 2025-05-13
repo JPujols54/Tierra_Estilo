@@ -50,18 +50,15 @@ public class Home extends javax.swing.JFrame {
 
         jLabel3.setBackground(new java.awt.Color(255, 204, 204));
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("  Ver mas >");
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 540, 80, 30));
 
         jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Hombres");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 150, 30));
 
         jLabel8.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Mujeres");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 150, 30));
 
@@ -78,33 +75,28 @@ public class Home extends javax.swing.JFrame {
         jPanel1.add(hombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 330, 310));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 2, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Categorias:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 150, 40));
 
         jLabel6.setBackground(new java.awt.Color(255, 204, 204));
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText(" Ver mas >");
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, 80, 30));
 
         jLabel7.setBackground(new java.awt.Color(255, 204, 204));
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("  Ver mas >");
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 540, 80, 30));
 
         jLabel9.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Niño");
+        jLabel9.setText("Niños");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 180, 150, 30));
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 204));
 
         jLabel10.setFont(new java.awt.Font("Monotype Corsiva", 3, 36)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Bienvenido a \"Tierra y Estilo\"");
 
         jButton1.setText(".");
@@ -120,9 +112,9 @@ public class Home extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(308, 308, 308)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
+                .addGap(294, 294, 294)
+                .addComponent(jLabel10)
+                .addGap(60, 60, 60)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(79, Short.MAX_VALUE))
         );
