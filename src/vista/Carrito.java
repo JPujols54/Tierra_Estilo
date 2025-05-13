@@ -4,15 +4,42 @@
  */
 package vista;
 
-/**
- *
- * @author franc
- */
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import logica.Producto;
+import java.sql.*;
+import logica.DBConnection;
+
 public class Carrito extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Carrito
-     */
+    // Lista para almacenar productos en el carrito
+    private ArrayList<Producto> carrito = new ArrayList<>();
+
+    public void agregarProducto(Producto producto) {
+        carrito.add(producto);
+        actualizarTabla();
+        actualizarPrecioTotal();
+    }
+
+    private void actualizarTabla() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0); // Limpiar tabla
+
+        // Añadir cada producto en el carrito a la tabla
+        for (Producto producto : carrito) {
+            model.addRow(new Object[]{producto.getNombre(), producto.getTalla(), producto.getPrecio()});
+        }
+    }
+
+    private void actualizarPrecioTotal() {
+        double total = 0;
+        for (Producto producto : carrito) {
+            total += producto.getPrecio();
+        }
+        jTextField1.setText(String.valueOf(total));
+    }
+
     public Carrito() {
         initComponents();
     }
@@ -38,7 +65,7 @@ public class Carrito extends javax.swing.JFrame {
         jRadioButton2 = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnPago = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,7 +76,6 @@ public class Carrito extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Carrito De Compras");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -144,8 +170,13 @@ public class Carrito extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 100, 110, -1));
 
-        jButton1.setText("Confirmar Pago");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 510, 160, 50));
+        btnPago.setText("Confirmar Pago");
+        btnPago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPagoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 510, 160, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,6 +201,67 @@ public class Carrito extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void btnPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagoActionPerformed
+         // Primero, verificamos que el carrito no esté vacío
+    if (carrito.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "El carrito está vacío. Agrega productos antes de pagar.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    // Obtener el total del carrito
+    double totalCarrito = 0;
+    for (Producto producto : carrito) {
+        totalCarrito += producto.getPrecio();
+    }
+
+    // Insertar la venta en la tabla `venta`
+    try (Connection connection = DBConnection.conectar()) {
+        // Crear el query de inserción
+        String query = "INSERT INTO venta (total, id_usuario) VALUES (?, ?)";
+        try (PreparedStatement statement = connection.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS)) {
+            // Asumimos que el ID del usuario está disponible en la variable idUsuario
+            int idUsuario = 1; // Esto lo deberías obtener de la sesión del usuario logueado
+
+            // Establecemos los parámetros del PreparedStatement
+            statement.setDouble(1, totalCarrito);
+            statement.setInt(2, idUsuario);
+
+            // Ejecutar la inserción
+            statement.executeUpdate();
+
+            // Obtener el ID de la venta recién insertada
+            try (var generatedKeys = statement.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    int idVenta = generatedKeys.getInt(1);
+
+                    // Insertar cada producto del carrito en la tabla `venta_producto`
+                    for (Producto producto : carrito) {
+                        String queryDetalle = "INSERT INTO venta_producto (id_venta, nombre_producto, talla, precio) VALUES (?, ?, ?, ?)";
+                        try (PreparedStatement stmtDetalle = connection.prepareStatement(queryDetalle)) {
+                            stmtDetalle.setInt(1, idVenta);
+                            stmtDetalle.setString(2, producto.getNombre());
+                            stmtDetalle.setString(3, producto.getTalla());
+                            stmtDetalle.setDouble(4, producto.getPrecio());
+                            stmtDetalle.executeUpdate();
+                        }
+                    }
+                }
+            }
+        }
+
+        // Vaciar el carrito y actualizar la UI
+        carrito.clear();
+        actualizarTabla();
+        actualizarPrecioTotal();
+
+        // Mensaje de éxito
+        JOptionPane.showMessageDialog(this, "Pago realizado con éxito", "Venta realizada", JOptionPane.INFORMATION_MESSAGE);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Error al realizar el pago. Inténtalo nuevamente.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_btnPagoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,7 +299,7 @@ public class Carrito extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnPago;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
