@@ -13,6 +13,8 @@ import javax.swing.JOptionPane;
 import logica.DBConnection;
 import vista.frmCarrito;
 import logica.ClienteUI;
+import logica.SesionUsuario;
+import logica.vUsuario;
 
 public class frmLogin extends javax.swing.JFrame {
 
@@ -280,50 +282,58 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPassMousePressed
 
     private void jIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jIngresarMouseClicked
+String email = txtUsuario.getText();
+String contrasena = String.valueOf(txtPass.getPassword());
 
-        String email = txtUsuario.getText();
-        String contrasena = String.valueOf(txtPass.getPassword());
+if (email.isEmpty() || contrasena.isEmpty()) {
+    JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.");
+    return;
+}
 
-        if (email.isEmpty() || contrasena.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.");
-            return;
-        }
+try {
+    Connection conn = DBConnection.conectar();
+    if (conn == null) {
+        JOptionPane.showMessageDialog(this, "No se pudo establecer conexión con la base de datos.");
+        return;
+    }
 
-        try {
-            Connection conn = DBConnection.conectar();
-            if (conn == null) {
-                JOptionPane.showMessageDialog(this, "No se pudo establecer conexión con la base de datos.");
-                return;
-            }
+    String sql = "SELECT * FROM usuario WHERE email = ? AND contrasena = ?";
+    PreparedStatement ps = conn.prepareStatement(sql);
+    ps.setString(1, email);
+    ps.setString(2, contrasena);
+    ResultSet rs = ps.executeQuery();
 
-            String sql = "SELECT * FROM usuario WHERE email = ? AND contrasena = ?";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, email);
-            ps.setString(2, contrasena);
-            ResultSet rs = ps.executeQuery();
+    if (rs.next()) {
+        // Crear objeto vUsuario y guardarlo en la sesión
+        vUsuario usuario = new vUsuario(
+            rs.getInt("id"),
+            rs.getString("nombre"),
+            rs.getString("email"),
+            rs.getString("contrasena"),
+            rs.getString("rol")
+        );
 
-            if (rs.next()) {
-                JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso. Bienvenido " + rs.getString("nombre"));
+        // Guardamos en la sesión
+        SesionUsuario.usuarioLogueado = usuario;
 
-                // Abrir clienteUI
-                ClienteUI clienteVentana = new ClienteUI(contrasena, WIDTH); // Asegúrate de que esté importada
-                clienteVentana.setVisible(true);
-                clienteVentana.setLocationRelativeTo(null); // Centrar ventana
+        JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso. Bienvenido " + usuario.getNombre());
 
-                // Cerrar la ventana actual (frmLogin)
-                this.dispose();
-            } else {
-                JOptionPane.showMessageDialog(this, "Correo o contraseña incorrectos.");
-            }
+        // Abrimos ventana Home
+        Home clienteVentana = new Home();
+        clienteVentana.setVisible(true);
+        clienteVentana.setLocationRelativeTo(null);
+        this.dispose();
 
-            rs.close();
-            ps.close();
-            conn.close();
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(this, "Error al conectar con la base de datos: " + e.getMessage());
-        }
+    } else {
+        JOptionPane.showMessageDialog(this, "Correo o contraseña incorrectos.");
+    }
 
-
+    rs.close();
+    ps.close();
+    conn.close();
+} catch (SQLException e) {
+    JOptionPane.showMessageDialog(this, "Error al conectar con la base de datos: " + e.getMessage());
+}
     }//GEN-LAST:event_jIngresarMouseClicked
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed

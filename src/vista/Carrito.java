@@ -10,6 +10,8 @@ import javax.swing.table.DefaultTableModel;
 import logica.Producto;
 import java.sql.*;
 import logica.DBConnection;
+import logica.SesionUsuario;
+import logica.vUsuario;
 
 public class Carrito extends javax.swing.JFrame {
 
@@ -22,7 +24,7 @@ public class Carrito extends javax.swing.JFrame {
         actualizarPrecioTotal();
     }
 
-    private void actualizarTabla() {
+    public void actualizarTabla() {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0); // Limpiar tabla
 
@@ -42,6 +44,8 @@ public class Carrito extends javax.swing.JFrame {
 
     public Carrito() {
         initComponents();
+        actualizarTabla();
+        actualizarPrecioTotal();
     }
 
     /**
@@ -223,64 +227,64 @@ public class Carrito extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void btnPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagoActionPerformed
-         // Primero, verificamos que el carrito no esté vacío
-    if (carrito.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "El carrito está vacío. Agrega productos antes de pagar.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
 
-    // Obtener el total del carrito
-    double totalCarrito = 0;
-    for (Producto producto : carrito) {
-        totalCarrito += producto.getPrecio();
-    }
+        if (carrito.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "El carrito está vacío. Agrega productos antes de pagar.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-    // Insertar la venta en la tabla `venta`
-    try (Connection connection = DBConnection.conectar()) {
-        // Crear el query de inserción
-        String query = "INSERT INTO venta (total, id_usuario) VALUES (?, ?)";
-        try (PreparedStatement statement = connection.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS)) {
-            // Asumimos que el ID del usuario está disponible en la variable idUsuario
-            int idUsuario = 1; // Esto lo deberías obtener de la sesión del usuario logueado
+        double totalCarrito = 0;
+        for (Producto producto : carrito) {
+            totalCarrito += producto.getPrecio();
+        }
 
-            // Establecemos los parámetros del PreparedStatement
-            statement.setDouble(1, totalCarrito);
-            statement.setInt(2, idUsuario);
+        try (Connection connection = DBConnection.conectar()) {
+            String query = "INSERT INTO venta (total, id_usuario) VALUES (?, ?)";
+            try (PreparedStatement statement = connection.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
-            // Ejecutar la inserción
-            statement.executeUpdate();
+                // ✅ Obtener ID del usuario logueado correctamente
+                int idUsuario = SesionUsuario.usuarioLogueado.getId();
 
-            // Obtener el ID de la venta recién insertada
-            try (var generatedKeys = statement.getGeneratedKeys()) {
-                if (generatedKeys.next()) {
-                    int idVenta = generatedKeys.getInt(1);
+                statement.setDouble(1, totalCarrito);
+                statement.setInt(2, idUsuario);
 
-                    // Insertar cada producto del carrito en la tabla `venta_producto`
-                    for (Producto producto : carrito) {
-                        String queryDetalle = "INSERT INTO venta_producto (id_venta, nombre_producto, talla, precio) VALUES (?, ?, ?, ?)";
-                        try (PreparedStatement stmtDetalle = connection.prepareStatement(queryDetalle)) {
-                            stmtDetalle.setInt(1, idVenta);
-                            stmtDetalle.setString(2, producto.getNombre());
-                            stmtDetalle.setString(3, producto.getTalla());
-                            stmtDetalle.setDouble(4, producto.getPrecio());
-                            stmtDetalle.executeUpdate();
+                int affectedRows = statement.executeUpdate();
+                if (affectedRows == 0) {
+                    throw new SQLException("No se pudo insertar la venta.");
+                }
+
+                try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        int idVenta = generatedKeys.getInt(1);
+
+                        // Insertar cada producto en venta_producto
+                        for (Producto producto : carrito) {
+                            String queryDetalle = "INSERT INTO venta_producto (id_venta, nombre_producto, talla, precio) VALUES (?, ?, ?, ?)";
+                            try (PreparedStatement stmtDetalle = connection.prepareStatement(queryDetalle)) {
+                                stmtDetalle.setInt(1, idVenta);
+                                stmtDetalle.setString(2, producto.getNombre());
+                                stmtDetalle.setString(3, producto.getTalla());
+                                stmtDetalle.setDouble(4, producto.getPrecio());
+                                stmtDetalle.executeUpdate();
+                            }
                         }
+
+                    } else {
+                        throw new SQLException("No se pudo obtener el ID de la venta.");
                     }
                 }
             }
+
+            // Limpiar carrito y actualizar
+            carrito.clear();
+            actualizarTabla();
+            actualizarPrecioTotal();
+            JOptionPane.showMessageDialog(this, "Pago realizado con éxito", "Venta realizada", JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error al realizar el pago. Inténtalo nuevamente.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
-        // Vaciar el carrito y actualizar la UI
-        carrito.clear();
-        actualizarTabla();
-        actualizarPrecioTotal();
-
-        // Mensaje de éxito
-        JOptionPane.showMessageDialog(this, "Pago realizado con éxito", "Venta realizada", JOptionPane.INFORMATION_MESSAGE);
-    } catch (SQLException e) {
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(this, "Error al realizar el pago. Inténtalo nuevamente.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
     }//GEN-LAST:event_btnPagoActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
