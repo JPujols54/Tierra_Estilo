@@ -4,17 +4,24 @@
  */
 package vista;
 
-/**
- *
- * @author justi
- */
+import java.awt.Image;
+import java.io.File;
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+
 public class frmCarrito extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frmHome
-     */
+    private File imagenSeleccionada;
+    private javax.swing.JLabel lblImagen;
+
     public frmCarrito() {
         initComponents();
+        
     }
 
     /**
@@ -37,9 +44,10 @@ public class frmCarrito extends javax.swing.JFrame {
         Textopersonalizado = new javax.swing.JLabel();
         Color_Combo = new javax.swing.JComboBox<>();
         tipoderopa_Combo = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        txtTextoPerzonalizado = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JToggleButton();
+        btnSubir = new javax.swing.JToggleButton();
+        labelVista = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -102,35 +110,38 @@ public class frmCarrito extends javax.swing.JFrame {
         Textopersonalizado.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
         Textopersonalizado.setText("Texto Personalizado:");
 
-        Color_Combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Color_Combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Blanco", "Negro", "Rojo", "Verde", " " }));
 
-        tipoderopa_Combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        tipoderopa_Combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Poloche", "Camisa", "Abrigo", "Gorra" }));
         tipoderopa_Combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipoderopa_ComboActionPerformed(evt);
             }
         });
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtTextoPerzonalizado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtTextoPerzonalizadoActionPerformed(evt);
             }
         });
 
-        jToggleButton1.setText("Guardar Diseno");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardar.setText("Guardar Diseno");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                btnGuardarActionPerformed(evt);
             }
         });
 
-        jToggleButton2.setText("Cargar Imagen");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSubir.setText("Cargar Imagen");
+        btnSubir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                btnSubirActionPerformed(evt);
             }
         });
+
+        labelVista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelVista.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelVista.setText("Vista Previa");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -144,17 +155,20 @@ public class frmCarrito extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(Color, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Tipoderopa, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSubir, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Textopersonalizado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(82, 82, 82)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTextoPerzonalizado, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Color_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tipoderopa_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(labelVista, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -171,13 +185,15 @@ public class frmCarrito extends javax.swing.JFrame {
                     .addComponent(Color_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTextoPerzonalizado, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Textopersonalizado, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(193, Short.MAX_VALUE))
+                    .addComponent(btnSubir, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(labelVista, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         bg.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 710, 500));
@@ -200,17 +216,64 @@ public class frmCarrito extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tipoderopa_ComboActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtTextoPerzonalizadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTextoPerzonalizadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtTextoPerzonalizadoActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    private void btnSubirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubirActionPerformed
+        JFileChooser selector = new JFileChooser();
+    selector.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Imágenes", "jpg", "png", "jpeg"));
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    int resultado = selector.showOpenDialog(this);
+
+    if (resultado == JFileChooser.APPROVE_OPTION) {
+        imagenSeleccionada = selector.getSelectedFile();
+
+        // Mostrar imagen en labelVista
+        ImageIcon icon = new ImageIcon(imagenSeleccionada.getAbsolutePath());
+        Image img = icon.getImage().getScaledInstance(labelVista.getWidth(), labelVista.getHeight(), Image.SCALE_SMOOTH);
+        labelVista.setIcon(new ImageIcon(img));
+        labelVista.setText(""); // Borra el texto "Vista Previa" cuando se carga la imagen
+    }
+    }//GEN-LAST:event_btnSubirActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        String tipo = tipoderopa_Combo.getSelectedItem().toString();
+    String color = Color_Combo.getSelectedItem().toString();
+    String texto = txtTextoPerzonalizado.getText();
+
+    if (imagenSeleccionada == null) {
+        JOptionPane.showMessageDialog(this, "Por favor, carga una imagen antes de guardar.");
+        return;
+    }
+
+    try {
+        // Usando tu clase DBConnection
+        Connection conn = logica.DBConnection.conectar();
+        
+        if (conn == null) {
+            JOptionPane.showMessageDialog(this, "No se pudo conectar a la base de datos.");
+            return;
+        }
+
+        String sql = "INSERT INTO prenda (tipo, color, texto_personalizado, imagen) VALUES (?, ?, ?, ?)";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setString(1, tipo);
+        ps.setString(2, color);
+        ps.setString(3, texto);
+
+        FileInputStream fis = new FileInputStream(imagenSeleccionada);
+        ps.setBinaryStream(4, fis, (int) imagenSeleccionada.length());
+
+        ps.executeUpdate();
+        JOptionPane.showMessageDialog(this, "Prenda guardada correctamente.");
+
+        ps.close();
+        conn.close();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error al guardar en la base de datos: " + e.getMessage());
+    }
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,14 +317,15 @@ public class frmCarrito extends javax.swing.JFrame {
     private javax.swing.JLabel Textopersonalizado;
     private javax.swing.JLabel Tipoderopa;
     private javax.swing.JPanel bg;
+    private javax.swing.JToggleButton btnGuardar;
+    private javax.swing.JToggleButton btnSubir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JLabel labelVista;
     private javax.swing.JComboBox<String> tipoderopa_Combo;
+    private javax.swing.JTextField txtTextoPerzonalizado;
     // End of variables declaration//GEN-END:variables
 }

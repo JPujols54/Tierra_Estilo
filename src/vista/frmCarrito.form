@@ -94,13 +94,13 @@
                                       <Component id="Color" min="-2" pref="208" max="-2" attributes="0"/>
                                       <Component id="Tipoderopa" min="-2" pref="208" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jToggleButton2" min="-2" pref="216" max="-2" attributes="0"/>
+                                  <Component id="btnSubir" min="-2" pref="216" max="-2" attributes="0"/>
                                   <Component id="Textopersonalizado" alignment="1" min="-2" pref="216" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField1" min="-2" pref="216" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton1" min="-2" pref="216" max="-2" attributes="0"/>
+                                  <Component id="txtTextoPerzonalizado" min="-2" pref="216" max="-2" attributes="0"/>
+                                  <Component id="btnGuardar" min="-2" pref="216" max="-2" attributes="0"/>
                                   <Component id="Color_Combo" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
                                   <Component id="tipoderopa_Combo" min="-2" pref="216" max="-2" attributes="0"/>
                               </Group>
@@ -108,6 +108,10 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
+                              <Component id="labelVista" min="-2" pref="311" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -130,15 +134,17 @@
                       </Group>
                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextField1" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="txtTextoPerzonalizado" min="-2" pref="33" max="-2" attributes="0"/>
                           <Component id="Textopersonalizado" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jToggleButton2" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="jToggleButton1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="btnSubir" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="btnGuardar" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="193" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="labelVista" min="-2" pref="141" max="-2" attributes="0"/>
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -223,11 +229,12 @@
             <Component class="javax.swing.JComboBox" name="Color_Combo">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="5">
+                    <StringItem index="0" value="Blanco"/>
+                    <StringItem index="1" value="Negro"/>
+                    <StringItem index="2" value="Rojo"/>
+                    <StringItem index="3" value="Verde"/>
+                    <StringItem index="4" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -239,10 +246,10 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                    <StringItem index="0" value="Poloche"/>
+                    <StringItem index="1" value="Camisa"/>
+                    <StringItem index="2" value="Abrigo"/>
+                    <StringItem index="3" value="Gorra"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -253,29 +260,35 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="txtTextoPerzonalizado">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTextoPerzonalizadoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+            <Component class="javax.swing.JToggleButton" name="btnGuardar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Guardar Diseno"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="jToggleButton2">
+            <Component class="javax.swing.JToggleButton" name="btnSubir">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cargar Imagen"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSubirActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelVista">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="1"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Vista Previa"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
